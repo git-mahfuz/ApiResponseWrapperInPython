@@ -5,23 +5,19 @@ class ResponseUtils:
 	
 	@dispatch(int)
 	def apiResponse(code):
-
 		return ResponseUtils.apiResponse(code, "", [], None)
 
 
 	@dispatch(int,str)
 	def apiResponse(code, message):
-
 		return ResponseUtils.apiResponse(code, message, [], None)
 
 	@dispatch(int,str,list)
 	def apiResponse(code, message, errors):
-		
 		return ResponseUtils.apiResponse(code, message, errors, None)
 
 	@dispatch(int,str,list,object)
 	def apiResponse(code, message, errors, data = None):
-
 		response = {
 			"code": code,
 			"message": message,
